@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homework 2</title>
+</head>
+<body>
+
+    <form>
+        <input type="checkbox">
+        <input type="text"> 
+        <button>reset</button>
+        <div>
+            Чебурашка </br> Крокодил Гена</br> Шапокляк</br> Крыса Лариса 
+        </div>
+    </form>
+
+
+    <div id="container" ></div>
+
+    <script src="https://unpkg.com/react@15/dist/react.js"></script>
+    <script src="https://unpkg.com/react-dom@15/dist/react-dom.js"></script>
+
+    <script src="MyListWords.js" ></script>
+    <link rel="stylesheet" types= "text/css" href="MyListWords.css" />
+
+    <script>
+        var lisrWords = ['california', 'everything', 'aboveboard', 'washington', 'basketball', 'weathering', 'characters', 'literature', 'contraband', 'appreciate'];
+        ReactDOM.render(
+            React.createElement(MyListWords,{words:lisrWords}),
+            document.getElementById('container')
+        )
+    </script>
+
+    
+</body>
+</html>
