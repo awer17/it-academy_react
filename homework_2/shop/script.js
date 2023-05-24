@@ -50,6 +50,7 @@ var MyComponent = React.createClass({
 
         return React.DOM.div(
             {className: 'MyComponent'},
+            React.DOM.a({href:"../../index.html"},"Home"),
             React.DOM.h1( null, titleList),
             React.DOM.table( null,
                 React.DOM.thead( null,
