@@ -1,0 +1,22 @@
+body{
+    padding-top: 30px;
+}
+a{
+    font-size: 30px;
+    display: block;
+    width: 300px;
+    margin: 0 auto;
+    margin-top: 10px;
+    border: solid 1px black ; 
+    border-radius: 5px;
+    padding: 5px;
+    text-decoration: none;
+    color: #cecece;
+    background: rgb(96, 119, 142);
+    text-align: center;
+    text-transform: capitalize;
+}
+a:hover{
+    background: rgb(155, 218, 206);
+    color: black;
+}

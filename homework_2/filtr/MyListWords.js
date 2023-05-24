@@ -52,6 +52,7 @@ var MyListWords = React.createClass({
                 value:this.state.textValue,
                 onChange:this.filtrChange}),
             React.DOM.input({
+                className:"btn",
                 type:'button',
                 value: 'RESET',
                 onClick:this.reset}),
