@@ -1,6 +1,7 @@
 form div{
+    white-space: pre-line;
+    width: 200px;
     margin-top: 20px;
-    width: 300px;
     border: solid 1px black;
-    padding: 3px;
+    padding: 10px;
 }

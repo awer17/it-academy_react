@@ -8,14 +8,14 @@
 </head>
 <body>
 
-    <form>
+    <!-- <form>
         <input type="checkbox">
         <input type="text"> 
         <button>reset</button>
         <div>
             Чебурашка </br> Крокодил Гена</br> Шапокляк</br> Крыса Лариса 
         </div>
-    </form>
+    </form> -->
 
 
     <div id="container" ></div>
@@ -28,6 +28,7 @@
 
     <script>
         var lisrWords = ['california', 'everything', 'aboveboard', 'washington', 'basketball', 'weathering', 'characters', 'literature', 'contraband', 'appreciate'];
+        
         ReactDOM.render(
             React.createElement(MyListWords,{words:lisrWords}),
             document.getElementById('container')
