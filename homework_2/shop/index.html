@@ -8,6 +8,7 @@
 </head>
 <body>
     <div id="container" ></div>
+    <div id="shop" ></div>
 
     <script src="https://unpkg.com/react@15/dist/react.js"></script>
     <script src="https://unpkg.com/react-dom@15/dist/react-dom.js"></script>
@@ -31,6 +32,10 @@
             React.createElement(MyComponent,
                 {title:titleList, car:carList}),
             document.getElementById('container')
+
+            // React.createElement(MyShop,
+            //     {title:titleList, car:carList}),
+            // document.getElementById('shop')
         );
     </script>
 
