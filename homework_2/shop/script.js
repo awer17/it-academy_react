@@ -7,6 +7,20 @@ var MyComponent = React.createClass({
         title:React.PropTypes.string,
     },
 
+    getInitialState: function (){
+        return{
+            selCode: null,
+            carList: this.props.car
+        }
+    },
+    select(code){
+        this.setState( {selCode: code} );
+    },
+    delete(code){
+        this.setState({carList: this.state.carList.filter(item => item.code !== code)});
+        console.log(code, this.state.carList.filter(item => item.code !== code))
+    },
+
     render: function(){
 
         var columName = []
@@ -18,17 +32,21 @@ var MyComponent = React.createClass({
             }
         }
 
-        // var itemElem = this.props.car.map( elem =>
-        //     React.createElement( ItemShop, {key: elem.code,
-        //         brand: elem.brand,
-        //         madel: elem.madel,
-        //         year: elem.year,
-        //         foto: elem.foto,
-        //         description: elem.description,
-        //         priсe: elem.priсe,
-        //         control: elem.control 
-        //     })
-        // )
+        var elemItem = this.state.carList.map( elem =>
+            React.createElement( ItemShop, {key: elem.code,
+                code:elem.code,
+                brand: elem.brand,
+                madel: elem.madel,
+                year: elem.year,
+                foto: elem.foto,
+                description: elem.description,
+                priсe: elem.priсe,
+                control: elem.control,
+                selCode: this.state.selCode,
+                cbSelect: this.select,
+                cbDelete: this.delete
+            })
+        )
 
         return React.DOM.div(
             {className: 'MyComponent'},
@@ -36,7 +54,7 @@ var MyComponent = React.createClass({
             React.DOM.table( null,
                 React.DOM.thead( null,
                     React.DOM.tr(null, columName)),
-                React.DOM.tbody(null, ItemShop)
+                React.DOM.tbody({className:'item'}, elemItem)
                 )
         );
     },
