@@ -1,15 +1,14 @@
 ﻿import React from 'react';
 import ReactDOM from 'react-dom';
 
-import VotesBlock from './components/VotesBlock';
+import ShopCar from './components/ShopCar';
 
-let questionText='Как вы относитесь к программированию?';
-let answersArr=require('./answers.json');
-let defaultFreeAnswerText="???";
+let titleList = 'Car for sale';
+let carList =nrequire('./carList.json');
+
 
 ReactDOM.render(
-  React.createElement(VotesBlock,{question:questionText,answers:answersArr,
-    deffreeanswertext: defaultFreeAnswerText,startWorkMode:1}), 
+  React.createElement(ShopCar,{title:titleList, car:carList}), 
   document.getElementById('container') 
 );
 
