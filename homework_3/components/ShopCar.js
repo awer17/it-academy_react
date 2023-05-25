@@ -11,21 +11,21 @@ class ShopCar extends React.Component{
 
     static propTypes = {
         title: PropTypes.string.isRequired,
-        car: PropTypes.array.arrayOf(
-            PropTypes.shape({
-                code: PropTypes.any,
-                brand: PropTypes.string,
-                madel: PropTypes.string,
-                year: PropTypes.string,
-                foto: PropTypes.string,
-                description: PropTypes.string,
-                priсe: PropTypes.string,
-                control: PropTypes.string,
-                selCode: PropTypes.any,
-                cbSelect: PropTypes.any,
-                cbDelete: PropTypes.any
-            })
-        )
+        car: PropTypes.array.array
+            // PropTypes.shape({
+            //     code: PropTypes.any,
+            //     brand: PropTypes.string,
+            //     madel: PropTypes.string,
+            //     year: PropTypes.string,
+            //     foto: PropTypes.string,
+            //     description: PropTypes.string,
+            //     priсe: PropTypes.string,
+            //     control: PropTypes.string,
+            //     selCode: PropTypes.any,
+            //     cbSelect: PropTypes.any,
+            //     cbDelete: PropTypes.any
+            // })
+        
     };
 
     state = {
@@ -49,7 +49,7 @@ class ShopCar extends React.Component{
         for ( var i = 0; i < arrColum.length; i++ ){
             var columNameItem = arrColum[i]
             if( columNameItem !== "code"){
-                columName.push(React.DOM.th({key:i, className:"_columName"}, columNameItem))
+                columName.push(DOM.th({key:i, className:"_columName"}, columNameItem))
             }
         };
 
@@ -72,7 +72,7 @@ class ShopCar extends React.Component{
         return DOM.div(
             {className: 'MyComponent'},
             DOM.a({href:"../../index.html"},"Home"),
-            DOM.h1( null, titleList),
+            DOM.h1( null, this.props.title),
             DOM.table( null,
                 DOM.thead( null,
                     DOM.tr(null, columName)),

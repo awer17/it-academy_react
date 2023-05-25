@@ -46,7 +46,7 @@ class ItemShop extends React.Component{
         )
     };
 }
-
+export default ItemShop;
 
 
 

@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 import ShopCar from './components/ShopCar';
 
 let titleList = 'Car for sale';
-let carList =nrequire('./carList.json');
+let carList = require('./carList.json');
 
 
 ReactDOM.render(

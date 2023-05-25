@@ -18,7 +18,6 @@ var MyComponent = React.createClass({
     },
     delete(code){
         this.setState({carList: this.state.carList.filter(item => item.code !== code)});
-        console.log(code, this.state.carList.filter(item => item.code !== code))
     },
 
     render: function(){

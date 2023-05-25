@@ -1,0 +1,9 @@
+table, th, td {
+    border:1px solid black;
+    text-align: center;
+    padding: 5px;
+}
+thead tr th{
+    text-transform: uppercase;
+}
+/*# sourceMappingURL=bundle.css.map*/

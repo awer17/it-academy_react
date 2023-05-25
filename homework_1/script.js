@@ -3,7 +3,7 @@ var MyComponent = React.createClass({
     displayName: 'MyComponent',
     
     propTypes: {
-        cbFreeAnswerTextChanged: React.PropTypes.func.isRequired,
+        cbFreeAnswerTextChanged: React.PropTypes.func,
     },
 
     свfreeAnswerTextChanged: function(EO) { 
