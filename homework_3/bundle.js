@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 9);
+/******/ 	return __webpack_require__(__webpack_require__.s = 8);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -261,9 +261,9 @@ process.umask = function() { return 0; };
 /* WEBPACK VAR INJECTION */(function(process) {
 
 if (process.env.NODE_ENV === 'production') {
-  module.exports = __webpack_require__(10);
+  module.exports = __webpack_require__(9);
 } else {
-  module.exports = __webpack_require__(11);
+  module.exports = __webpack_require__(10);
 }
 
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
@@ -392,9 +392,9 @@ module.exports = ReactPropTypesSecret;
 /* WEBPACK VAR INJECTION */(function(process) {
 
 if (process.env.NODE_ENV === 'production') {
-  module.exports = __webpack_require__(14);
+  module.exports = __webpack_require__(13);
 } else {
-  module.exports = __webpack_require__(15);
+  module.exports = __webpack_require__(14);
 }
 
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
@@ -416,11 +416,11 @@ if (process.env.NODE_ENV !== 'production') {
   // By explicitly using `prop-types` you are opting into new development behavior.
   // http://fb.me/prop-types-in-prod
   var throwOnDirectAccess = true;
-  module.exports = __webpack_require__(23)(ReactIs.isElement, throwOnDirectAccess);
+  module.exports = __webpack_require__(22)(ReactIs.isElement, throwOnDirectAccess);
 } else {
   // By explicitly using `prop-types` you are opting into new production behavior.
   // http://fb.me/prop-types-in-prod
-  module.exports = __webpack_require__(25)();
+  module.exports = __webpack_require__(24)();
 }
 
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
@@ -433,9 +433,9 @@ if (process.env.NODE_ENV !== 'production') {
 /* WEBPACK VAR INJECTION */(function(process) {
 
 if (process.env.NODE_ENV === 'production') {
-  module.exports = __webpack_require__(21);
+  module.exports = __webpack_require__(20);
 } else {
-  module.exports = __webpack_require__(22);
+  module.exports = __webpack_require__(21);
 }
 
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
@@ -454,229 +454,30 @@ module.exports = Function.call.bind(Object.prototype.hasOwnProperty);
 "use strict";
 
 
-/**
- * Copyright (c) 2015-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */
-
-(function(f) {
-  if (true) {
-    module.exports = f(__webpack_require__(1));
-    /* global define */
-  } else if (typeof define === 'function' && define.amd) {
-    define(['react'], f);
-  } else {
-    var g;
-    if (typeof window !== 'undefined') {
-      g = window;
-    } else if (typeof global !== 'undefined') {
-      g = global;
-    } else if (typeof self !== 'undefined') {
-      g = self;
-    } else {
-      g = this;
-    }
-
-    if (typeof g.React === 'undefined') {
-      throw Error('React module should be required before ReactDOMFactories');
-    }
-
-    g.ReactDOMFactories = f(g.React);
-  }
-})(function(React) {
-  /**
-   * Create a factory that creates HTML tag elements.
-   */
-  function createDOMFactory(type) {
-    var factory = React.createElement.bind(null, type);
-    // Expose the type on the factory and the prototype so that it can be
-    // easily accessed on elements. E.g. `<Foo />.type === Foo`.
-    // This should not be named `constructor` since this may not be the function
-    // that created the element, and it may not even be a constructor.
-    factory.type = type;
-    return factory;
-  };
-
-  /**
-   * Creates a mapping from supported HTML tags to `ReactDOMComponent` classes.
-   */
-  var ReactDOMFactories = {
-    a: createDOMFactory('a'),
-    abbr: createDOMFactory('abbr'),
-    address: createDOMFactory('address'),
-    area: createDOMFactory('area'),
-    article: createDOMFactory('article'),
-    aside: createDOMFactory('aside'),
-    audio: createDOMFactory('audio'),
-    b: createDOMFactory('b'),
-    base: createDOMFactory('base'),
-    bdi: createDOMFactory('bdi'),
-    bdo: createDOMFactory('bdo'),
-    big: createDOMFactory('big'),
-    blockquote: createDOMFactory('blockquote'),
-    body: createDOMFactory('body'),
-    br: createDOMFactory('br'),
-    button: createDOMFactory('button'),
-    canvas: createDOMFactory('canvas'),
-    caption: createDOMFactory('caption'),
-    cite: createDOMFactory('cite'),
-    code: createDOMFactory('code'),
-    col: createDOMFactory('col'),
-    colgroup: createDOMFactory('colgroup'),
-    data: createDOMFactory('data'),
-    datalist: createDOMFactory('datalist'),
-    dd: createDOMFactory('dd'),
-    del: createDOMFactory('del'),
-    details: createDOMFactory('details'),
-    dfn: createDOMFactory('dfn'),
-    dialog: createDOMFactory('dialog'),
-    div: createDOMFactory('div'),
-    dl: createDOMFactory('dl'),
-    dt: createDOMFactory('dt'),
-    em: createDOMFactory('em'),
-    embed: createDOMFactory('embed'),
-    fieldset: createDOMFactory('fieldset'),
-    figcaption: createDOMFactory('figcaption'),
-    figure: createDOMFactory('figure'),
-    footer: createDOMFactory('footer'),
-    form: createDOMFactory('form'),
-    h1: createDOMFactory('h1'),
-    h2: createDOMFactory('h2'),
-    h3: createDOMFactory('h3'),
-    h4: createDOMFactory('h4'),
-    h5: createDOMFactory('h5'),
-    h6: createDOMFactory('h6'),
-    head: createDOMFactory('head'),
-    header: createDOMFactory('header'),
-    hgroup: createDOMFactory('hgroup'),
-    hr: createDOMFactory('hr'),
-    html: createDOMFactory('html'),
-    i: createDOMFactory('i'),
-    iframe: createDOMFactory('iframe'),
-    img: createDOMFactory('img'),
-    input: createDOMFactory('input'),
-    ins: createDOMFactory('ins'),
-    kbd: createDOMFactory('kbd'),
-    keygen: createDOMFactory('keygen'),
-    label: createDOMFactory('label'),
-    legend: createDOMFactory('legend'),
-    li: createDOMFactory('li'),
-    link: createDOMFactory('link'),
-    main: createDOMFactory('main'),
-    map: createDOMFactory('map'),
-    mark: createDOMFactory('mark'),
-    menu: createDOMFactory('menu'),
-    menuitem: createDOMFactory('menuitem'),
-    meta: createDOMFactory('meta'),
-    meter: createDOMFactory('meter'),
-    nav: createDOMFactory('nav'),
-    noscript: createDOMFactory('noscript'),
-    object: createDOMFactory('object'),
-    ol: createDOMFactory('ol'),
-    optgroup: createDOMFactory('optgroup'),
-    option: createDOMFactory('option'),
-    output: createDOMFactory('output'),
-    p: createDOMFactory('p'),
-    param: createDOMFactory('param'),
-    picture: createDOMFactory('picture'),
-    pre: createDOMFactory('pre'),
-    progress: createDOMFactory('progress'),
-    q: createDOMFactory('q'),
-    rp: createDOMFactory('rp'),
-    rt: createDOMFactory('rt'),
-    ruby: createDOMFactory('ruby'),
-    s: createDOMFactory('s'),
-    samp: createDOMFactory('samp'),
-    script: createDOMFactory('script'),
-    section: createDOMFactory('section'),
-    select: createDOMFactory('select'),
-    small: createDOMFactory('small'),
-    source: createDOMFactory('source'),
-    span: createDOMFactory('span'),
-    strong: createDOMFactory('strong'),
-    style: createDOMFactory('style'),
-    sub: createDOMFactory('sub'),
-    summary: createDOMFactory('summary'),
-    sup: createDOMFactory('sup'),
-    table: createDOMFactory('table'),
-    tbody: createDOMFactory('tbody'),
-    td: createDOMFactory('td'),
-    textarea: createDOMFactory('textarea'),
-    tfoot: createDOMFactory('tfoot'),
-    th: createDOMFactory('th'),
-    thead: createDOMFactory('thead'),
-    time: createDOMFactory('time'),
-    title: createDOMFactory('title'),
-    tr: createDOMFactory('tr'),
-    track: createDOMFactory('track'),
-    u: createDOMFactory('u'),
-    ul: createDOMFactory('ul'),
-    var: createDOMFactory('var'),
-    video: createDOMFactory('video'),
-    wbr: createDOMFactory('wbr'),
-
-    // SVG
-    circle: createDOMFactory('circle'),
-    clipPath: createDOMFactory('clipPath'),
-    defs: createDOMFactory('defs'),
-    ellipse: createDOMFactory('ellipse'),
-    g: createDOMFactory('g'),
-    image: createDOMFactory('image'),
-    line: createDOMFactory('line'),
-    linearGradient: createDOMFactory('linearGradient'),
-    mask: createDOMFactory('mask'),
-    path: createDOMFactory('path'),
-    pattern: createDOMFactory('pattern'),
-    polygon: createDOMFactory('polygon'),
-    polyline: createDOMFactory('polyline'),
-    radialGradient: createDOMFactory('radialGradient'),
-    rect: createDOMFactory('rect'),
-    stop: createDOMFactory('stop'),
-    svg: createDOMFactory('svg'),
-    text: createDOMFactory('text'),
-    tspan: createDOMFactory('tspan'),
-  };
-
-  // due to wrapper and conditionals at the top, this will either become
-  // `module.exports ReactDOMFactories` if that is available,
-  // otherwise it will be defined via `define(['react'], ReactDOMFactories)`
-  // if that is available,
-  // otherwise it will be defined as global variable.
-  return ReactDOMFactories;
-});
-
-
-
-/***/ }),
-/* 9 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
 var _react = __webpack_require__(1);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactDom = __webpack_require__(12);
+var _reactDom = __webpack_require__(11);
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
-var _ShopCar = __webpack_require__(20);
+var _ShopCar = __webpack_require__(19);
 
 var _ShopCar2 = _interopRequireDefault(_ShopCar);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var titleList = 'Car for sale';
-var carList = __webpack_require__(28);
+var carList = __webpack_require__(27);
 
-_reactDom2.default.render(_react2.default.createElement(_ShopCar2.default, { title: titleList, car: carList }), document.getElementById('container'));
+_reactDom2.default.render(_react2.default.createElement(_ShopCar2.default, {
+  title: titleList,
+  car: carList
+}), document.getElementById('container'));
 
 /***/ }),
-/* 10 */
+/* 9 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -706,7 +507,7 @@ exports.useLayoutEffect=function(a,b){return S().useLayoutEffect(a,b)};exports.u
 
 
 /***/ }),
-/* 11 */
+/* 10 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3047,7 +2848,7 @@ exports.version = ReactVersion;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 12 */
+/* 11 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3085,15 +2886,15 @@ if (process.env.NODE_ENV === 'production') {
   // DCE check should happen before ReactDOM bundle executes so that
   // DevTools can report bad minification during injection.
   checkDCE();
-  module.exports = __webpack_require__(13);
+  module.exports = __webpack_require__(12);
 } else {
-  module.exports = __webpack_require__(16);
+  module.exports = __webpack_require__(15);
 }
 
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 13 */
+/* 12 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3397,7 +3198,7 @@ exports.unstable_renderSubtreeIntoContainer=function(a,b,c,d){if(!rk(c))throw Er
 
 
 /***/ }),
-/* 14 */
+/* 13 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3424,7 +3225,7 @@ exports.unstable_wrapCallback=function(a){var b=P;return function(){var c=P;P=b;
 
 
 /***/ }),
-/* 15 */
+/* 14 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4078,7 +3879,7 @@ exports.unstable_wrapCallback = unstable_wrapCallback;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 16 */
+/* 15 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4100,7 +3901,7 @@ if (process.env.NODE_ENV !== "production") {
 var React = __webpack_require__(1);
 var _assign = __webpack_require__(2);
 var Scheduler = __webpack_require__(4);
-var tracing = __webpack_require__(17);
+var tracing = __webpack_require__(16);
 
 var ReactSharedInternals = React.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
 
@@ -30348,22 +30149,22 @@ exports.version = ReactVersion;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 17 */
+/* 16 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 /* WEBPACK VAR INJECTION */(function(process) {
 
 if (process.env.NODE_ENV === 'production') {
-  module.exports = __webpack_require__(18);
+  module.exports = __webpack_require__(17);
 } else {
-  module.exports = __webpack_require__(19);
+  module.exports = __webpack_require__(18);
 }
 
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 18 */
+/* 17 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -30379,7 +30180,7 @@ var b=0;exports.__interactionsRef=null;exports.__subscriberRef=null;exports.unst
 
 
 /***/ }),
-/* 19 */
+/* 18 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -30734,7 +30535,7 @@ exports.unstable_wrap = unstable_wrap;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 20 */
+/* 19 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -30754,13 +30555,9 @@ var _propTypes = __webpack_require__(5);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
 
-var _reactDomFactories = __webpack_require__(8);
+__webpack_require__(25);
 
-var _reactDomFactories2 = _interopRequireDefault(_reactDomFactories);
-
-__webpack_require__(26);
-
-var _ItemShop = __webpack_require__(27);
+var _ItemShop = __webpack_require__(26);
 
 var _ItemShop2 = _interopRequireDefault(_ItemShop);
 
@@ -30811,7 +30608,7 @@ var ShopCar = function (_React$Component) {
             for (var i = 0; i < arrColum.length; i++) {
                 var columNameItem = arrColum[i];
                 if (columNameItem !== "code") {
-                    columName.push(_reactDomFactories2.default.th({ key: i, className: "_columName" }, columNameItem));
+                    columName.push(DOM.th({ key: i, className: "_columName" }, columNameItem));
                 }
             };
 
@@ -30827,11 +30624,41 @@ var ShopCar = function (_React$Component) {
                     control: elem.control,
                     selCode: _this2.state.selCode,
                     cbSelect: _this2.select,
-                    cbDelete: _this2.delete
-                });
+                    cbDelete: _this2.delete });
             });
 
-            return _reactDomFactories2.default.div({ className: 'MyComponent' }, _reactDomFactories2.default.a({ href: "../../index.html" }, "Home"), _reactDomFactories2.default.h1(null, this.props.title), _reactDomFactories2.default.table(null, _reactDomFactories2.default.thead(null, _reactDomFactories2.default.tr(null, columName)), _reactDomFactories2.default.tbody({ className: 'item' }, elemItem)));
+            return _react2.default.createElement(
+                'div',
+                { className: 'votes-block' },
+                _react2.default.createElement(
+                    'a',
+                    { href: '../../index.html' },
+                    ' Hone'
+                ),
+                _react2.default.createElement(
+                    'h1',
+                    null,
+                    this.props.title
+                ),
+                _react2.default.createElement(
+                    'table',
+                    null,
+                    _react2.default.createElement(
+                        'thead',
+                        null,
+                        _react2.default.createElement(
+                            'tr',
+                            null,
+                            columName
+                        )
+                    ),
+                    _react2.default.createElement(
+                        'tbody',
+                        { className: 'item' },
+                        elemItem
+                    )
+                )
+            );
         }
     }]);
 
@@ -30840,26 +30667,24 @@ var ShopCar = function (_React$Component) {
 
 ShopCar.propTypes = {
     title: _propTypes2.default.string.isRequired,
-    car: _propTypes2.default.array.any
-    // PropTypes.shape({
-    //     code: PropTypes.any,
-    //     brand: PropTypes.string,
-    //     madel: PropTypes.string,
-    //     year: PropTypes.string,
-    //     foto: PropTypes.string,
-    //     description: PropTypes.string,
-    //     priсe: PropTypes.string,
-    //     control: PropTypes.string,
-    //     selCode: PropTypes.any,
-    //     cbSelect: PropTypes.any,
-    //     cbDelete: PropTypes.any
-    // })
-
+    car: _propTypes2.default.arrayOf(_propTypes2.default.shape({
+        code: _propTypes2.default.any,
+        brand: _propTypes2.default.string,
+        madel: _propTypes2.default.string,
+        year: _propTypes2.default.string,
+        foto: _propTypes2.default.string,
+        description: _propTypes2.default.string,
+        priсe: _propTypes2.default.string,
+        control: _propTypes2.default.string,
+        selCode: _propTypes2.default.any,
+        cbSelect: _propTypes2.default.any,
+        cbDelete: _propTypes2.default.any
+    }))
 };
 exports.default = ShopCar;
 
 /***/ }),
-/* 21 */
+/* 20 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -30881,7 +30706,7 @@ exports.isValidElementType=function(a){return"string"===typeof a||"function"===t
 
 
 /***/ }),
-/* 22 */
+/* 21 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -31070,7 +30895,7 @@ exports.typeOf = typeOf;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 23 */
+/* 22 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -31088,7 +30913,7 @@ var assign = __webpack_require__(2);
 
 var ReactPropTypesSecret = __webpack_require__(3);
 var has = __webpack_require__(7);
-var checkPropTypes = __webpack_require__(24);
+var checkPropTypes = __webpack_require__(23);
 
 var printWarning = function() {};
 
@@ -31688,7 +31513,7 @@ module.exports = function(isValidElement, throwOnDirectAccess) {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 24 */
+/* 23 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -31799,7 +31624,7 @@ module.exports = checkPropTypes;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 25 */
+/* 24 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -31871,13 +31696,13 @@ module.exports = function() {
 
 
 /***/ }),
-/* 26 */
+/* 25 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
-/* 27 */
+/* 26 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -31896,10 +31721,6 @@ var _react2 = _interopRequireDefault(_react);
 var _propTypes = __webpack_require__(5);
 
 var _propTypes2 = _interopRequireDefault(_propTypes);
-
-var _reactDomFactories = __webpack_require__(8);
-
-var _reactDomFactories2 = _interopRequireDefault(_reactDomFactories);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -31937,7 +31758,7 @@ var ItemShop = function (_React$Component) {
             var color = "";
             this.props.selCode === this.props.code ? color = "red" : color = "white";
 
-            return _reactDomFactories2.default.tr({ className: '_item-car', style: { backgroundColor: color }, onClick: this.select }, _reactDomFactories2.default.td(null, this.props.brand), _reactDomFactories2.default.td(null, this.props.madel), _reactDomFactories2.default.td(null, this.props.year), _reactDomFactories2.default.td(null, _reactDomFactories2.default.img({ src: this.props.foto, alt: this.props.brand + " " + this.props.madel })), _reactDomFactories2.default.td(null, this.props.description), _reactDomFactories2.default.td(null, this.props.priсe), _reactDomFactories2.default.td(null, _reactDomFactories2.default.button({ onClick: this.control }, this.props.control)));
+            return DOM.tr({ className: '_item-car', style: { backgroundColor: color }, onClick: this.select }, DOM.td(null, this.props.brand), DOM.td(null, this.props.madel), DOM.td(null, this.props.year), DOM.td(null, DOM.img({ src: this.props.foto, alt: this.props.brand + " " + this.props.madel })), DOM.td(null, this.props.description), DOM.td(null, this.props.priсe), DOM.td(null, DOM.button({ onClick: this.control }, this.props.control)));
         }
     }]);
 
@@ -31960,7 +31781,7 @@ ItemShop.propTypes = {
 exports.default = ItemShop;
 
 /***/ }),
-/* 28 */
+/* 27 */
 /***/ (function(module, exports) {
 
 module.exports = [{"brand":"Ford","code":100,"madel":"C-Max","year":"2016","foto":"img/ford.webp","description":"$2,000 below Kelley Blue Book! EPA /42 MPG City! Just Traded In, GREAT MILES 71,165! Heated Leather Seats, Navigation, Moonroof, iPod/MP3 Input, Hybrid, Onboard Communications System, PANORAMIC FIXED GLASS ROOF, Aluminum WheelsONE PRICE. ONE PERSON. ","priсe":"$13,700","control":"Delete"},{"brand":"KIA","code":200,"madel":"Soul","year":"2015","foto":"img/kia.webp","description":"CLEAN CARFAX FOG LIGHTS BACK UP CAMERA ALLOY WHEELS POWER SEAT LEATHER Come see for yourself why most of our customers are repeat and referrals! Best prices in town!!! Call today and schedule a test drive.","priсe":"$13,200","control":"Delete'"},{"brand":"Chevrolet","code":300,"madel":"Volt","year":"2014","foto":"img/chevrolet.webp","description":"Front Audio System; Chevrolet Mylink Radio; AM/FM Stereo With CD Player And MP3 Playback Electric Drive; Voltec Emissions; Federal Requirements Engine; Range Extender; 1.4L Internal Combust ion Engine Pebble Beige/Dark Accents; Premium Cloth Seat Trim Seats","priсe":"$14,199","control":"Delete"},{"brand":"FIAT","code":400,"madel":"500e Battery Electric","year":"2014","foto":"img/fiat.webp","description":"Fully electric! 84 miles per full charge! Has minor hail!All vehicles will have an additional $399 D&H fee. Financing available depending on your credit history.","priсe":"$9,999","control":"Delete"}]

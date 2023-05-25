@@ -8,7 +8,10 @@ let carList = require('./carList.json');
 
 
 ReactDOM.render(
-  React.createElement(ShopCar,{title:titleList, car:carList}), 
+  <ShopCar
+  title = {titleList}
+  car = {carList}
+  />,
   document.getElementById('container') 
 );
 

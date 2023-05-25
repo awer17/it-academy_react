@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import DOM from 'react-dom-factories';
+
+import './itemShop.css';
 
 class ItemShop extends React.Component{
 
@@ -32,18 +33,18 @@ class ItemShop extends React.Component{
             this.props.selCode === this.props.code? color = "red" : color = "white"
             
 
-        return DOM.tr({className: '_item-car', style:{backgroundColor: color}, onClick:this.select,}, 
-                DOM.td(null, this.props.brand),
-                DOM.td(null, this.props.madel),
-                DOM.td(null, this.props.year),
-                DOM.td(null,
-                    DOM.img({src: this.props.foto, alt: this.props.brand + " "+ this.props.madel})
-                    ),
-                DOM.td(null, this.props.description),
-                DOM.td(null, this.props.priсe),
-                DOM.td(null, 
-                    DOM.button({onClick: this.control}, this.props.control)),
-        )
+        return (<tr className="_item-cae" style ={{backgroundColor: color}} onClick={this.select}>
+            <td>{this.props.brand}</td>
+            <td>{this.props.madel}</td>
+            <td>{this.props.year}</td>
+            <td><img src={this.props.foto} alt={this.props.brand + "_" + this.props.madel} /></td>
+            <td>{this.props.description}</td>
+            <td>{this.props.priсe}</td>
+            <td>
+                <button>edite</button>
+                <button onClick={this.control}>delete</button>
+            </td>
+        </tr>)
     };
 }
 export default ItemShop;

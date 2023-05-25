@@ -6,3 +6,8 @@ table, th, td {
 thead tr th{
     text-transform: uppercase;
 }
+button{
+    width: 80px;
+    margin-top: 10px;
+    text-transform: uppercase;
+}
