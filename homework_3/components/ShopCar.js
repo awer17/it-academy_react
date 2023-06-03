@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import './ShopCar.css';
 
 import ItemShop from './ItemShop';
+import ViewCard from './ViewCard';
 
 
 class ShopCar extends React.Component{
@@ -29,11 +30,13 @@ class ShopCar extends React.Component{
 
     state = {
         selCode: null,
-        carList: this.props.car
+        carList: this.props.car,
+        workMode: 0,
     };
 
     select = (code) => {
         this.setState( {selCode: code});
+        this.setState( {workMode: 1});
     };
 
     delete = (code) => {
@@ -50,7 +53,6 @@ class ShopCar extends React.Component{
                 columName.push(<th key={i} className="_columName">{columNameItem}</th>)
             }
         };
-
         var elemItem = this.state.carList.map( elem =>
             <ItemShop key =  {elem.code}
                 code = {elem.code}
@@ -65,17 +67,20 @@ class ShopCar extends React.Component{
                 cbSelect = {this.select}
                 cbDelete = {this.delete}/>
         );
-
+        const selItem = this.state.carList.find( item => item.code === this.state.selCode);
         return (
             <div className="votes-block">
                 <a href="../../index.html"> Hone</a>
                 <h1>{this.props.title}</h1>
-                <table>
-                    <thead>
-                        <tr>{columName}</tr>
-                    </thead>
-                    <tbody className="item">{elemItem}</tbody>
-                </table>
+                <div className="wrapp">
+                    <table>
+                        <thead>
+                            <tr>{columName}</tr>
+                        </thead>
+                        <tbody className="item">{elemItem}</tbody>
+                    </table>
+                    {(this.state.workMode === 1) && <ViewCard itemViewCard={selItem} />}
+                </div>
             </div>
         )
     }

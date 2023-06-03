@@ -1,3 +1,12 @@
+.votes-block{
+    font-size: 14px;
+}
+.wrapp{
+    display: flex;
+}
+/* table{
+    width: 60%;
+} */
 table, th, td {
     border:1px solid black;
     text-align: center;
