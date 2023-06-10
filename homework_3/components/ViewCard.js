@@ -1,5 +1,8 @@
 import React from 'react';
+import './ViewCar.css';
+
 import PropTypes from 'prop-types';
+
 
 class ViewCard extends React.Component{
 
@@ -19,7 +22,7 @@ class ViewCard extends React.Component{
 
     render() {
         console.log(this.props.itemViewCard.code)
-        return ( <div>
+        return ( <div className='wrap-car'>
             <img src={this.props.itemViewCard.foto} alt={this.props.itemViewCard.madel} />
             <div>{this.props.itemViewCard.brand}</div>
             <div>{this.props.itemViewCard.madel}</div>

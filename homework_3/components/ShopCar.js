@@ -41,6 +41,7 @@ class ShopCar extends React.Component{
 
     delete = (code) => {
         this.setState({carList: this.state.carList.filter(item => item.code !== code)});
+        this.setState( {workMode: 0});
     };
 
     render(){
