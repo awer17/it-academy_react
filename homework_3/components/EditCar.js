@@ -36,12 +36,13 @@ class EditCar extends React.Component{
     };
 
     changeBrand = (oe) =>{
-        this.setState({itemBrand:oe.target.value},this.validate())
         this.props.editStarted(true)
+        this.setState({itemBrand:oe.target.value},this.validate())
+        
     };
     changeModel = (oe) =>{
-        this.setState({itemModel:oe.target.value},this.validate())
         this.props.editStarted(true)
+        this.setState({itemModel:oe.target.value},this.validate())
     };
     changeYear = (oe) =>{
         this.setState({itemYear:oe.target.value},this.validate())
@@ -75,35 +76,37 @@ class EditCar extends React.Component{
             valideSeva: (!brandError)&&(!priceError)&&(!modelError)&&(!yearError)&&(!descriptionError)})
     };
 
-    // clickCansel = ()=>{
-    //     this.setState({itemBrand: this.props.itemViewCard.brand,
-    //         itemModel: this.props.itemViewCard.model,
-    //         itemYear: this.props.itemViewCard.year,
-    //         itemPriсe: this.props.itemViewCard.priсe,
-    //         itemDescription: this.props.itemViewCard.description})
-    // }
+    clickCansel = ()=>{
+        this.setState({itemBrand: this.props.itemViewCard.brand,
+            itemModel: this.props.itemViewCard.model,
+            itemYear: this.props.itemViewCard.year,
+            itemPriсe: this.props.itemViewCard.priсe,
+            itemDescription: this.props.itemViewCard.description,
+            valideSeva: false,}, this.validate(),),
+        this.props.editStarted(false)
+    }
 
 
     render() {
         return (<div className="editCar">
             <img src={this.props.itemViewCard.foto} alt={this.props.itemViewCard.madel} />
-            <input type="text" placeholder={this.state.itemBrand} onChange={this.changeBrand} />
+            <input type="text" value={this.state.itemBrand} onChange={this.changeBrand} />
             <span className="error">{this.state.brandError}</span>
 
-            <input type="text" placeholder={this.state.itemPriсe} onChange={this.changePrice} />
+            <input type="text" value={this.state.itemPriсe} onChange={this.changePrice} />
             <span className="error">{this.state.priceError}</span>
 
-            <input type="text" placeholder={this.state.itemModel} onChange={this.changeModel}/>
+            <input type="text" value={this.state.itemModel} onChange={this.changeModel}/>
             <span className="error">{this.state.modelError}</span>
 
-            <input type="text" placeholder={this.state.itemYear} onChange={this.changeYear} />
+            <input type="text" value={this.state.itemYear} onChange={this.changeYear} />
             <span className="error">{this.state.yearError}</span>
 
-            <textarea type="text" rows="10" placeholder={this.state.itemDescription} onChange={this.changeDescription} />
+            <textarea type="text" rows="10" value={this.state.itemDescription} onChange={this.changeDescription} />
             <span className="error">{this.state.descriptionError}</span>
 
             <button disabled={!this.state.valideSeva} onClick={this.clickSave}> Save</button>
-            {/* <button  onClick={this.clickCansel}> Cancel</button> */}
+            <button  onClick={this.clickCansel}> Cancel</button>
         </div>
         )
     }
