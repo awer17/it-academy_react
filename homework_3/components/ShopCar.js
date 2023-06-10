@@ -39,7 +39,6 @@ class ShopCar extends React.Component{
     };
 
     editStarted = (a) =>{
-        console.log(a)
         this.setState( {editStarted: a});
     }
 
