@@ -12,6 +12,9 @@ table, th, td {
     text-align: center;
     padding: 5px;
 }
+table{
+    width: 100%;
+}
 thead tr th{
     text-transform: uppercase;
 }

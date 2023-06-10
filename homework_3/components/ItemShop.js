@@ -16,11 +16,19 @@ class ItemShop extends React.Component{
         control: PropTypes.string,
         selCode: PropTypes.any,
         cbSelect: PropTypes.any,
-        cbDelete: PropTypes.any
+        cbDelete: PropTypes.any,
+        cdEdit: PropTypes.any,
     };
 
     select = () => {
         this.props.cbSelect(this.props.code);
+    };
+
+    edit = (eo) => {
+        eo.stopPropagation();
+        this.props.cdEdit(this.props.code);
+
+        // this.props.cdEdit(this.props.code);
     };
 
     control = (eo) => {
@@ -28,10 +36,13 @@ class ItemShop extends React.Component{
         this.props.cbDelete(this.props.code);
     };
 
+  
+
     render () {
         var color = ""
             this.props.selCode === this.props.code? color = "red" : color = "white"
-            
+        var disabledBtn =""
+            this.props.editStarted === true? disabledBtn=true : disabledBtn=false
 
         return (<tr className="_item-cae" style ={{backgroundColor: color}} onClick={this.select}>
             <td>{this.props.brand}</td>
@@ -39,15 +50,14 @@ class ItemShop extends React.Component{
             <td>{this.props.year}</td>
             <td><img src={this.props.foto} alt={this.props.brand + "_" + this.props.madel} /></td>
             <td>{this.props.description}</td>
-            <td>{this.props.priсe}</td>
+            <td>{"$" + this.props.priсe}</td>
             <td>
-                <button>edite</button>
-                <button onClick={this.control}>delete</button>
+                <button disabled={disabledBtn} onClick={this.edit}>edite</button>
+                <button disabled={disabledBtn} onClick={this.control}>delete</button>
             </td>
         </tr>)
     };
 }
 export default ItemShop;
-
 
 
