@@ -1,6 +1,4 @@
 import React, { useState } from 'react';
-import { StyleContext } from "../context/StyleContext";
-import { DogSlider } from "../components/DogSlider";
 
 
 
@@ -10,9 +8,6 @@ export const PageCompare = () => {
   const [style,setStyle]=useState( { DogList: [],  incFontItems: incFontSize } );
           
   return (
-    <StyleContext.Provider value={ style }>
-      eec
-    </StyleContext.Provider>
-  );
-    
+    <p>wdewd</p>
+  );  
 }

@@ -1,0 +1,8 @@
+.wrap-search{
+  display: flex;
+  justify-content: space-evenly;
+}
+div.slider-wrap{
+  position: relative;
+  max-width: 1000px;
+}

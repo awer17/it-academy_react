@@ -7,7 +7,7 @@ import { PagesRouter } from './routes/PagesRouter';
 
 export const App = () => (
     <BrowserRouter>
-        <div>
+        <div className='wrap-main'>
             <PagesLinks />
             <PagesRouter />
         </div>

@@ -8,12 +8,9 @@ export const dogSlice = createSlice({
   name: 'dog',
   initialState,
   reducers: {
-
     updateDogListState: (state,action) => {
       state.dogList = [];
     },
-
-
   },
 });
 

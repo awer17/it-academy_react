@@ -1,14 +1,15 @@
 import React, { useContext } from 'react';
-import { StyleContext } from "../context/StyleContext";
 import { DogSlid } from "../components/DogSlid";
 import './DogSlider.css'
+import { useDispatch, useSelector } from 'react-redux';
+
 
 
 export const DogSlider = () => {
 
-  const currStyle = useContext(StyleContext); // gets what the nearest StyleContext.Provider provides
-  const rendDoglist = currStyle.DogList.slice(0,6)
-  console.log(rendDoglist);
+  const dogListAll = useSelector( state => state.dog); 
+  const rendDoglist = dogListAll.dogList.slice(0,6)
+
 
   let elemItem = rendDoglist.map( elem =>
     <DogSlid key={elem.code}

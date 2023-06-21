@@ -4,7 +4,7 @@ import './FiltrSearch.css'
 
 export const FiltrSearch = () =>{
 return(
-  <div>
+  <div className="form-wrapp">
       <p>form</p>
   </div>
 )

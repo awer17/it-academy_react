@@ -1,26 +1,18 @@
 import React, { useState } from 'react';
-import { StyleContext } from "../context/StyleContext";
-import { DogSlider } from "../components/DogSlider";
 import { useDispatch, useSelector } from 'react-redux';
 
+
+import {DogSlider} from "../components/DogSlider";
 import {FiltrSearch} from '../components/FiltrSearch'
-import { dogListData } from '../dogListData'
 import {SliderBtn} from '../components/SliderBtn'
+import './PageHome.css'
+
 
 export const PageHome = () => {
-
-  const dogListAll = useSelector( state => state.dog ); 
-
-  console.log(dogListAll)
-  
-
-
-  // const incItemSlide = () => { setStyle( {itemSlide:6}) };
-  const [style,setStyle]=useState( { DogList: dogListData.dogListData,  incItemSlide: 5 } );
-
-    
+  console.log(window.innerWidth)
+  const dogListAll = useSelector( state => state.dog); 
     return (
-      <div>
+      <div className='wrapper-page-home'>
         <div className="wrap-title">
           <h1>Your Dog</h1>
           <p>Сhoose the breed of dog that suits you</p>
@@ -28,10 +20,9 @@ export const PageHome = () => {
         <div className="wrap-search">
           <FiltrSearch/>
           <div className="slider-wrap">
-          <StyleContext.Provider value={ style }>
-            < DogSlider/>
-            <SliderBtn/>
-          </StyleContext.Provider>
+            < DogSlider doglist={dogListAll.dogList}/>
+            <SliderBtn classBrnLef={"btn-slid"}/>
+            <SliderBtn classBrnLef={"btn-slid-lefr"}/>
           </div>
         </div>
         
