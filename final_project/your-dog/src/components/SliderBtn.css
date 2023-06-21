@@ -1,4 +1,4 @@
-div.btn-slid{
+.btn-slid{
   position: absolute;
   top: calc(50% - 57px / 2);
   right: -20px;
@@ -30,4 +30,19 @@ img.btnSlid{
   bottom: 0;
   cursor: pointer;
   transform: rotate(180deg);
+}
+
+div.btn-slid:hover ,.btn-slid-lefr:hover{
+  background: #f1e1d5;
+  border: 2px solid #F1CDB3;
+}
+
+.not-active{
+  border: 2px solid #CDCDCD;
+  cursor: default;
+}
+
+div.btn-slid.not-active:hover ,.btn-slid-lefr.not-active:hover{
+  background: none;
+  border: 2px solid #CDCDCD;
 }

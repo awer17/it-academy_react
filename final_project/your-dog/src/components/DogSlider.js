@@ -8,7 +8,10 @@ import { useDispatch, useSelector } from 'react-redux';
 export const DogSlider = () => {
 
   const dogListAll = useSelector( state => state.dog); 
-  const rendDoglist = dogListAll.dogList.slice(0,6)
+  const elementСount = useSelector( state => state.dog.elementСount); 
+  const changelist = useSelector( state => state.dog.changelist); 
+
+  const rendDoglist = dogListAll.dogList.slice(0 + changelist ,elementСount + changelist)
 
 
   let elemItem = rendDoglist.map( elem =>
