@@ -1,0 +1,39 @@
+div.wrap-detals{
+
+  padding: 20px;
+}
+.img-block{
+  display: inline;
+  width: 100%;
+  display: flex;
+  margin: 0;
+  /* justify-content: space-around; */
+}
+img.img-detals{
+  max-width: 300px;
+  height: 300px;
+}
+div.wrap-detals p.title{
+  font-size: 40px;
+  margin-top: 15px;
+
+}
+div.wrap-detals p.short_description{
+  font-size: 30px;
+
+}
+div.wrap-detals p.desc{
+margin-top: 20px;
+font-size: 25px;
+text-align:justify ;
+}
+div.wrap-detals p.info{
+  font-size: 20px;
+  margin-top: 10px;
+  margin-bottom: 7px;
+}
+a{
+  margin-left: 60px;
+  font-size: 29px;
+
+}

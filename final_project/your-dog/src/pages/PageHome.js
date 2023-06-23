@@ -33,7 +33,7 @@ export const PageHome = () => {
       <div className='wrapper-page-home'>
         <div className="wrap-title">
           <h1>Your Dog</h1>
-          <p>Сhoose the breed of dog that suits you</p>
+          <p className='desc-titile'>Сhoose the breed of dog that suits you</p>
         </div>
         <div className="wrap-search">
           <FiltrSearch/>

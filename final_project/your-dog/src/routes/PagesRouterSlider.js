@@ -8,7 +8,7 @@ export const PagesRouterSlider = () => {
           
     return (
     <Routes>
-      <Route path="*" element={<PageDogList/>} />
+      <Route path="/*" element={<PageDogList/>} />
       <Route path="/detals" element={<PageDetals/>} />
     </Routes>
 );

@@ -11,7 +11,7 @@
 		"code": 100
 	},
 	{
-		"name": "african",
+		"name": "African",
 		"nameDog": "african",
 		"short_description": "A large, elegant hound with a long, flowing coat.",
 		"description": "The Afghan Hound is a large, elegant hound that is known for its beauty and its independence. They are also known for their long, flowing coat, which requires regular grooming. Afghan Hounds are good for families with older children, as they can be a bit too independent for young children. They are also good for people who live in homes with large yards.",
@@ -55,7 +55,7 @@
 		"code": 105
 	},
 	{
-		"name": "American Eskimo Dog",
+		"name": "American Eskimo",
 		"nameDog": "eskimo",
 		"short_description": "A small, white Spitz-type dog.",
 		"description": "The American Eskimo Dog is a small, white Spitz-type dog that is known for its intelligence and its loyalty. They are also known for their friendly and gentle nature. American Eskimo Dogs are good for families with children of all ages. They are also good for people who live in apartments, as they do not require a lot of space.",

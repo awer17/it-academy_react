@@ -59,7 +59,7 @@ export class DogSlid extends React.PureComponent{
         <p >friendliness: {this.props.elem.friendliness}</p>
         <input type="button" value="Add to comparison"/>
         <NavLink to="/detals" >
-          <Detals code={this.props.elem.code}/>
+          <Detals code={[this.props.elem.code, this.state.clients]}/>
         </NavLink>
       </div> 
     );
