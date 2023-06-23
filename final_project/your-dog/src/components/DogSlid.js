@@ -56,7 +56,7 @@ export class DogSlid extends React.PureComponent{
         <p className="title">{this.props.elem.name}</p>
         <p >{this.props.elem.short_description}</p>
         <p >size at the withers: {this.props.elem.size_at_the_withers}</p>
-        <p >friendliness: {this.props.elem.friendliness}</p>
+        <p >friendliness: {this.props.elem.friendliness} out of 10</p>
         <input type="button" value="Add to comparison"/>
         <NavLink to="/detals" >
           <Detals code={[this.props.elem.code, this.state.clients]}/>

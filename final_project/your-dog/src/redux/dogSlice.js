@@ -1,26 +1,29 @@
 import { createSlice } from '@reduxjs/toolkit';
 
+let dogList = require("../dog.json")
+
 //displaying the number of elements 6/4/1
-let elem
+let elem, dogListDisp
 let winWidth = window.innerWidth;
   if (winWidth < 600) {elem = 1}
     else if (winWidth < 1000) {elem = 4}
       else elem = 6;
-
-
-
-let dogList = require("../dog.json")
-console.log(dogList.length );
   if ( !Number.isInteger(dogList.length/elem)){
     let amountElem = elem - (dogList.length % elem)
-    dogList =  dogList.concat(dogList.slice(0,amountElem))
+    dogListDisp =  dogList.concat(dogList.slice(0,amountElem))
   }
-console.log(dogList.length );
+
+//Breed list
+let breedsList = []
+breedsList.push(dogList.map(elem => [elem.name, elem.code,elem.friendliness]))
+
+
 const initialState={
-  dogList: dogList,
+  dogList: dogListDisp,
   elementСount: elem,
   changelist : 0,
-  detalsElem: 0
+  detalsElem: 0,
+  breedsList: breedsList[0]
 }
 
 
