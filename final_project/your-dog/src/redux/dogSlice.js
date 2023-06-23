@@ -45,8 +45,10 @@ export const dogSlice = createSlice({
     },
     addCompare:(state, action) => {
       if (state.listCompare.length < 3){
-        state.listCompare.push(dogList.filter(item => item.code == action.payload));}
+        state.listCompare.push(dogList.filter(item => item.code == action.payload)[0]);}
       else     alert("Only 3 breeds can be compared at most")
+      
+
     }
   },
 });

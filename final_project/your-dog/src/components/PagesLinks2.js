@@ -8,9 +8,7 @@ import './PagesLinks2.css';
 export const PagesLinks2 = () => {
 
   const listCompare = useSelector( state => state.dog.listCompare); 
-
-  console.log(listCompare.length)
-
+  
     return (
       <div className='wrap-link2'>
         <div className='link2'>
