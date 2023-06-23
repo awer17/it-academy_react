@@ -52,15 +52,21 @@ export class DogSlid extends React.PureComponent{
 
     return (
       <div className='item' >
-        <img src={this.state.clients}  alt="photo unavailable" />
-        <p className="title">{this.props.elem.name}</p>
-        <p >{this.props.elem.short_description}</p>
-        <p >size at the withers: {this.props.elem.size_at_the_withers}</p>
-        <p >friendliness: {this.props.elem.friendliness} out of 10</p>
-        <input className="slide" type="button" value="Add to comparison"/>
-        <NavLink to="/detals" >
-          <Detals code={[this.props.elem.code, this.state.clients]}/>
-        </NavLink>
+        <div className="wrap-img">
+          <img src={this.state.clients}  alt="photo unavailable" />
+          <p className="title">{this.props.elem.name}</p>
+          </div>
+        <div className="wrap-desc">
+          <p >{this.props.elem.short_description}</p>
+          <p >size at the withers: {this.props.elem.size_at_the_withers}</p>
+          <p >friendliness: {this.props.elem.friendliness} out of 10</p>
+        </div>
+        <div className="wrap-btn">
+          <input className="slide" type="button" value="Add to comparison"/>
+          <NavLink to="/detals" >
+            <Detals code={[this.props.elem.code, this.state.clients]}/>
+          </NavLink>
+        </div>
       </div> 
     );
   }

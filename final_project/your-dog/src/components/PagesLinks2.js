@@ -14,9 +14,9 @@ export const PagesLinks2 = () => {
 
     return (
       <div className='link'>
-        <NavLink to="/" className="PageLink">all breeds</NavLink>
-        <NavLink to="/detals" className="PageLink">detals</NavLink>
+        <NavLink to="/" className="PageLink">tile</NavLink>
+        {/* <NavLink to="/detals" className="PageLink">detals</NavLink> */}
+        <NavLink to="/list" className="PageLink">list</NavLink>
       </div>
     );
-
 };

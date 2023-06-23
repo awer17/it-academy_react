@@ -1,0 +1,29 @@
+.wrap-lst{
+  height: 530px;
+  overflow-y: scroll;
+  padding: 5px;
+  border: 1px solid rgb(180, 180, 180);
+
+}
+.wrap-lst .item{
+  width: 96%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  height: auto;
+  border: 1px solid rgb(180, 180, 180);
+  margin-bottom: 10px;
+}
+.wrap-lst .item .wrap-img{
+  width: 150px;
+}
+.wrap-lst .item .wrap-img img{
+  width: 100%;
+}
+.wrap-lst .wrap-desc{
+  width: 350px;
+}
+
+.wrap-lst .wrap-btn input{
+  position: relative;
+}
