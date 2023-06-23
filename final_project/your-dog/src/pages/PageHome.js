@@ -1,16 +1,19 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
+import { PagesLinks2 } from '../components/PagesLinks2';
+import { PagesRouterSlider } from '../routes/PagesRouterSlider';
+
+
+
 
 import {DogSlider} from "../components/DogSlider";
 import {FiltrSearch} from '../components/FiltrSearch'
 import {SliderBtn} from '../components/SliderBtn'
 import './PageHome.css'
 
-// import { updateСhangelistState } from "../redux/dogSlice";
-
-
 export const PageHome = () => {
+  
   let elementСount = useSelector( state => state.dog.elementСount); 
   const changelist = useSelector( state => state.dog.changelist); 
   const dogListAll = useSelector( state => state.dog); 
@@ -25,10 +28,7 @@ export const PageHome = () => {
   if (changelist >= dogListAll.dogList.length - elementСount ) {
     elementСount = 0;
     notActive = "not-active"
-  }
-
-
-  
+  }  
     return (
       <div className='wrapper-page-home'>
         <div className="wrap-title">
@@ -37,15 +37,11 @@ export const PageHome = () => {
         </div>
         <div className="wrap-search">
           <FiltrSearch/>
-          <div className="slider-wrap">
-            < DogSlider doglist={dogListAll.dogList}/>
-            <SliderBtn classBrnLef={`btn-slid ${notActive}`} elementСount={elementСount} />
-            <SliderBtn classBrnLef={`btn-slid-lefr ${notActiveBack}`} elementСount={-elementСountBack}/>
+          <div className="dog-list">
+            <PagesLinks2/>
+            <PagesRouterSlider/>
           </div>
         </div>
-        
-        
       </div>
     );
-    
 };

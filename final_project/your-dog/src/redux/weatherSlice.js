@@ -20,9 +20,13 @@ export const weatherSlice = createSlice({
       state.data = action.payload;
     },
 
+    updateCodeDetals: (state, action) => {
+      state.detalsElem =  action.payload;
+    }
+
   },
 });
 
-export const { updateLoadState, updateData } = weatherSlice.actions;
+export const { updateLoadState, updateData, updateCodeDetals } = weatherSlice.actions;
 
 export default weatherSlice.reducer;

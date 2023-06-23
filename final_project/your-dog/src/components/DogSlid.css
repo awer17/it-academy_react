@@ -37,6 +37,9 @@ input{
   display: block;
   margin: 10px auto 0 auto;
   position: absolute;
-  bottom: 10px;
+  bottom: 5px;
   left: calc(50% - 100px);
+}
+input.detals{
+  bottom: 32px ;
 }

@@ -4,5 +4,7 @@
 }
 div.slider-wrap{
   position: relative;
+}
+.dog-list{
   max-width: 1000px;
 }

@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 
-export const PageCompare = () => {
+export const PageDetals = () => {
 
   return (
-    <p>wdewd</p>
+    <p>Detals</p>
   );  
 }

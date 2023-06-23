@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { DogSlid } from "../components/DogSlid";
 import './DogSlider.css'
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 
 

@@ -9,7 +9,7 @@ let winWidth = window.innerWidth;
 
 
 
-let dogList= require("../dog.json")
+let dogList = require("../dog.json")
 console.log(dogList.length );
   if ( !Number.isInteger(dogList.length/elem)){
     let amountElem = elem - (dogList.length % elem)
@@ -19,7 +19,8 @@ console.log(dogList.length );
 const initialState={
   dogList: dogList,
   elementСount: elem,
-  changelist : 0
+  changelist : 0,
+  detalsElem: 0
 }
 
 
@@ -32,9 +33,12 @@ export const dogSlice = createSlice({
     updateСhangelistState: (state,action) => {
       state.changelist += action.payload
     },
+    updateCodeDetals: (state, action) => {
+      state.detalsElem =  action.payload;
+    }
   },
 });
 
-export const { updateСhangelistState } = dogSlice.actions;
+export const { updateСhangelistState, updateCodeDetals } = dogSlice.actions;
 
 export default dogSlice.reducer;

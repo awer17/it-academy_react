@@ -8,10 +8,8 @@ export const PagesRouter = () => {
           
     return (
       <Routes>
-        <Route path="/" element={<PageHome/>} />
+        <Route path="*" element={<PageHome/>} />
         <Route path="/compare" element={<PageCompare/>} />
-        {/* <Route path="/clients" element={<PageClients/>} />
-        <Route path="/client/:clid" element={<PageClient/>} /> */}
       </Routes>
     );
     
