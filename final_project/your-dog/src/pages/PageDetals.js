@@ -11,8 +11,6 @@ export const PageDetals = () => {
 
   const dogDetal = arrDog.filter(s => s.code == codeDetal[0])
 
-console.log(dogDetal[0])
-
   return (
     <div className="wrap-detals">
       <div className="img-block">

@@ -1,12 +1,13 @@
 .wrap-search{
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
 }
 div.slider-wrap{
   position: relative;
+  height: 800px;
 }
 .dog-list{
-  max-width: 1000px;
+  width: 1000px;
 }
 h1{
   margin-left: 100px;

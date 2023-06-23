@@ -15,20 +15,23 @@ export const InputListBreeds = () =>{
     dispatch( filterBreedsList(eo.target.value))
   };
 
+let df
   const consol = (a) =>{
-    console.log(a.target.value,breedsList)
+    df = a.target.value
+    console.log(a.target.value)
   }
 
 
 
+
   let elemOptionItem = BreedsListFilt.map( elem => 
-    <OptionItem key = {elem[1]}
-      nameBreed ={elem[0]}
-      value ={elem[1]}/>)
+    <OptionItem key = {elem.code}
+      nameBreed ={elem.name}
+      value ={elem.code}/>)
 
   return(
     <>
-    <input type="text" onChange={ilterBreedsList} />
+    <input type="text" onChange={ilterBreedsList} value={df}  />
     <select size="10"  onChange={consol}>
       {elemOptionItem}
     </select>
