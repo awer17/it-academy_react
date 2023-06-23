@@ -65,9 +65,9 @@ export class DogSlid extends React.PureComponent{
           <p >friendliness: {this.props.elem.friendliness} out of 10</p>
         </div>
         <div className="wrap-btn">
-          <AddCompare code={this.props.elem.code}/>
+          <AddCompare  code={this.props.elem.code}/>
           <NavLink to="/detals" >
-            <Detals code={[this.props.elem.code, this.state.clients]}/>
+            <Detals  code={[this.props.elem.code, this.state.clients]}/>
           </NavLink>
         </div>
       </div> 

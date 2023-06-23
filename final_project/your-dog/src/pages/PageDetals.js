@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import './PageDetals.css'
+import {AddCompare} from '../components/AddCompare'
+
 
 
 export const PageDetals = () => {
@@ -18,6 +20,7 @@ export const PageDetals = () => {
         <div className="tetle">
           <p className="title">{dogDetal[0].name}</p>
           <p className="short_description">{dogDetal[0].short_description}</p>
+          <AddCompare code={dogDetal[0].code}/>
         </div>
       </div>
       <p className='desc'> {dogDetal[0].description}</p>

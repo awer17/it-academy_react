@@ -36,7 +36,6 @@ input.slide{
   width: 200px;
   display: block;
   margin: 10px auto 0 auto;
-  position: absolute;
   bottom: 5px;
   left: calc(50% - 100px);
 }
@@ -44,8 +43,11 @@ input.detals{
   width: 200px;
   display: block;
   margin: 10px auto 0 auto;
-  position: absolute;
   bottom: 5px;
   left: calc(50% - 100px);
   bottom: 32px ;
+}
+
+div.slider-wrap .wrap-btn input{
+  position: absolute;
 }
