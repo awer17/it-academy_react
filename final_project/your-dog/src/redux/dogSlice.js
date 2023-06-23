@@ -23,7 +23,9 @@ const initialState={
   elementСount: elem,
   changelist : 0,
   detalsElem: 0,
-  breedsList: breedsList[0]
+  breedsList: breedsList[0],
+  filterBreedsList: breedsList[0]
+
 }
 
 
@@ -38,10 +40,18 @@ export const dogSlice = createSlice({
     },
     updateCodeDetals: (state, action) => {
       state.detalsElem =  action.payload;
+    },
+    filterBreedsList: (state,action) =>{
+      state.filterBreedsList = state.breedsList.filter(as)
+          function as (w){
+            return w[0].includes(action.payload)
+          }
+
+      // state.filterBreedsList = action.payload
     }
   },
 });
 
-export const { updateСhangelistState, updateCodeDetals } = dogSlice.actions;
+export const { updateСhangelistState, updateCodeDetals,filterBreedsList } = dogSlice.actions;
 
 export default dogSlice.reducer;
