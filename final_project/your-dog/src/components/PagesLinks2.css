@@ -1,0 +1,27 @@
+.link2{
+}
+.link2 a{
+  font-size: 20px;
+  text-decoration: none;
+}
+.link2 a.active{
+  text-decoration: dotted;
+}
+.wrap-link2{
+  display: flex;
+  justify-content: space-between;
+  height: 40px;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.compare{
+  display: flex;
+}
+.compare a.PageLink{
+  text-decoration: none;
+  margin-right: 0;
+}
+.compare span{
+  color:red;
+  display: block;
+}

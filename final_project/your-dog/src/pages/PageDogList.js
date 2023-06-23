@@ -1,9 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 
 import {DogSlider} from "../components/DogSlider";
-import {FiltrSearch} from '../components/FiltrSearch'
 import {SliderBtn} from '../components/SliderBtn'
 
 export const PageDogList = () => {

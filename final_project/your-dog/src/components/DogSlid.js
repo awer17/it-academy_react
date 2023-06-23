@@ -2,6 +2,9 @@ import React from 'react';
 import './DogSlid.css'
 import { NavLink } from 'react-router-dom';
 import {Detals} from './Detals';
+import {AddCompare} from './AddCompare'
+import { useDispatch } from 'react-redux';
+
 
 export class DogSlid extends React.PureComponent{
 
@@ -62,7 +65,7 @@ export class DogSlid extends React.PureComponent{
           <p >friendliness: {this.props.elem.friendliness} out of 10</p>
         </div>
         <div className="wrap-btn">
-          <input className="slide" type="button" value="Add to comparison"/>
+          <AddCompare code={this.props.elem.code}/>
           <NavLink to="/detals" >
             <Detals code={[this.props.elem.code, this.state.clients]}/>
           </NavLink>

@@ -19,7 +19,8 @@ const initialState={
   changelist : 0,
   detalsElem: [100,"https://images.dog.ceo/breeds/affenpinscher/n02110627_3972.jpg"],
   breedsList: dogList,
-  filterBreedsList: dogList
+  filterBreedsList: dogList,
+  listCompare: []
 
 }
 
@@ -41,10 +42,15 @@ export const dogSlice = createSlice({
           function as (w){
             return w.name.includes(action.payload)
       }
+    },
+    addCompare:(state, action) => {
+      if (state.listCompare.length < 3){
+        state.listCompare.push(dogList.filter(item => item.code == action.payload));}
+      else     alert("Only 3 breeds can be compared at most")
     }
   },
 });
 
-export const { updateСhangelistState, updateCodeDetals,filterBreedsList } = dogSlice.actions;
+export const { updateСhangelistState, updateCodeDetals,filterBreedsList, addCompare } = dogSlice.actions;
 
 export default dogSlice.reducer;
