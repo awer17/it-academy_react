@@ -5,6 +5,7 @@
 div.slider-wrap{
   position: relative;
   height: 800px;
+  width: 1000px;
   
 }
 .dog-list{
@@ -21,6 +22,26 @@ p.desc-titile{
   font-size: 20px;
   margin-bottom: 20px;
 }
+
+@media (max-width: 1290px){
+  div.slider-wrap{
+    width: 900px;
+  }
+}
+
+@media (max-width: 1180px){
+  div.slider-wrap{
+    width: 700px;
+  }
+}
+@media (max-width: 970px){
+  div.slider-wrap{
+    width: 540px;
+  }
+}
+
+
+
 @media (max-width: 824px){
   .wrapper-page-home{
     position: relative;
@@ -28,6 +49,16 @@ p.desc-titile{
   .wrap-search{
     flex-direction: column;
   }
-  
+  div.slider-wrap{
+    width: 90%;
+    margin: 0 auto;
+  }
+  p.desc-titile{
+    margin: 10px auto 0 auto;
+    text-align: center;
+  }
+
 }
+
+
 

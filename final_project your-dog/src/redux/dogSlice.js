@@ -4,16 +4,17 @@ let dogList = require("../dog.json")
 
 //displaying the number of elements 6/4/1
 let elemnt, dogListDisp
-
 let winWidth = window.innerWidth;
-  if (600 > winWidth ) {elemnt = 1}
-    else if (winWidth < 1150) {elemnt = 4}
+  // elemnt = 6;
+  
+  if (600 > winWidth ) {elemnt = 2}
+    else if (winWidth < 1180) {elemnt = 4}
       else elemnt = 6;
 
       
   if ( !Number.isInteger(dogList.length / elemnt)){
     let amountElem = elemnt - (dogList.length % elemnt)
-    dogListDisp =  dogList.concat(dogList.slice(0,amountElem))
+    dogListDisp =  dogList.concat(dogList.slice(0, amountElem))
   }
 
 const initialState={
