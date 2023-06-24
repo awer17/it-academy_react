@@ -1,0 +1,11 @@
+div.wrap-compare-item{
+  display: flex;
+}
+
+div.wrap-compare-item .wrap-img img{
+  width: 250px;
+  height: 200px;
+}
+div.wrap-compare-item button{
+  width: 100;
+}

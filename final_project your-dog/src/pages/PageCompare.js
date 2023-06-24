@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { DogSlid } from "../components/DogSlid";
-import {AddCompare} from '../components/AddCompare'
+import { ItemCompare } from "../components/ItemCompare";
 
 
 
@@ -13,11 +12,10 @@ export const PageCompare = () => {
   
 
   if (listCompare.length !== 0){
-    console.log(listCompare)
     let elemItem = listCompare.map( elem =>
-      <DogSlid  key={elem.code}
+      <ItemCompare  key={elem.code}
         elem={elem}>
-        </DogSlid>)
+        </ItemCompare>)
     return ( 
       <div className="wrap-lst">
         {elemItem}

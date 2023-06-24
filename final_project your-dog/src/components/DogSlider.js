@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { DogSlid } from "../components/DogSlid";
+import { DogSlid } from "./DogSlid";
 import './DogSlider.css'
 import { useSelector } from 'react-redux';
 

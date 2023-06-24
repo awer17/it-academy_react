@@ -4,6 +4,7 @@ let dogList = require("../dog.json")
 
 //displaying the number of elements 6/4/1
 let elem, dogListDisp
+let arr =[]
 let winWidth = window.innerWidth;
   if (winWidth < 600) {elem = 1}
     else if (winWidth < 1080) {elem = 4}
@@ -21,10 +22,7 @@ const initialState={
   breedsList: dogList,
   filterBreedsList: dogList,
   listCompare: []
-
 }
-
-
 
 export const dogSlice = createSlice({
   
@@ -44,15 +42,19 @@ export const dogSlice = createSlice({
       }
     },
     addCompare:(state, action) => {
-      if (state.listCompare.length < 3){
-        state.listCompare.push(dogList.filter(item => item.code == action.payload)[0]);}
-      else     alert("Only 3 breeds can be compared at most")
-      
-
+      if( !(state.listCompare.filter(item => item.code == action.payload)[0])
+        )
+        {if (state.listCompare.length < 3){
+            state.listCompare.push(dogList.filter(item => item.code == action.payload)[0]);}
+          else     alert("Only 3 breeds can be compared at most")}
+      else     alert("Breed already added for comparison")
+    },
+    removeCompare:(state, action) => {
+      state.listCompare = state.listCompare.filter(item => item.code !== action.payload)
     }
   },
 });
 
-export const { updateСhangelistState, updateCodeDetals,filterBreedsList, addCompare } = dogSlice.actions;
+export const { updateСhangelistState, updateCodeDetals,filterBreedsList, addCompare,removeCompare } = dogSlice.actions;
 
 export default dogSlice.reducer;

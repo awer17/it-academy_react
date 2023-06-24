@@ -1,7 +1,7 @@
 import React from "react";
 import './FiltrSearch.css'
-import {InputListBreeds}  from'../components/InputListBreeds'
-import {InputFriendliness}  from'../components/InputFriendliness'
+import {InputListBreeds}  from'./InputListBreeds'
+import {InputFriendliness}  from'./InputFriendliness'
 
 
 
