@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { ItemCompare } from "../components/ItemCompare";
-
+import './PageCompare.css'
 
 
 
@@ -17,7 +17,7 @@ export const PageCompare = () => {
         elem={elem}>
         </ItemCompare>)
     return ( 
-      <div className="wrap-lst">
+      <div className="page-compare">
         {elemItem}
         
       </div>
@@ -26,7 +26,7 @@ export const PageCompare = () => {
   else{
     return (
       <div className="page-compare">
-        NO breeds to compare! Add a breed
+        <p className="no-compare">NO breeds to compare! Add a breed</p>
       </div>
     )
   }

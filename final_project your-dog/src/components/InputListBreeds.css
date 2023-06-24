@@ -1,0 +1,41 @@
+.wrap-input{
+  margin-top: 40px;
+}
+.wrap-input ._text{
+  width: 170px;
+  padding: 3px;
+  margin-bottom: 10px;
+}
+._sellect{
+  width: 180px;
+  padding: 2px;
+}
+details{
+  display: none;
+  width: 200px;
+}
+.title-filter{
+  margin-bottom: 10px;
+}
+
+@media (max-width: 824px){
+  details{
+    width: 200px;
+    border: 1px solid #292929;
+    border-radius: 10px;
+    position: absolute;
+    z-index: 10;
+    width: 170px;
+    display: block;
+    left: calc(50% - 170px / 2);
+    top: 141px;
+    padding: 10px 15px ;
+    background: white;
+  }
+  .input-wrap{
+    display: none;
+  }
+  .wrap-input ._text{
+    margin-top: 10px;
+  }
+}

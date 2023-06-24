@@ -1,8 +1,12 @@
-.PageLink {
+.PageLink1 {
+    font-size: 15px;
     color: black;
     margin-right: 10px;
 }
 
 .ActivePageLink {
     font-weight: bold;
+}
+.nav{
+margin-top: 10px;
 }

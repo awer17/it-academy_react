@@ -30,13 +30,13 @@ export const ItemCompare = (props) => {
       <div className="wrap-img">
           <img src={age}  alt={props.elem.name} />
           <p className="title">{props.elem.name}</p>
-          <button onClick={aremoveCompareBtn}>remove from comparison</button>
       </div>
       <div className="wrap-desc">
         <p >{props.elem.short_description}</p>
         <p >{props.elem.description}</p>
         <p >size at the withers: {props.elem.size_at_the_withers}</p>
         <p >friendliness: {props.elem.friendliness} out of 10</p>
+        <button onClick={aremoveCompareBtn}>remove from comparison</button>
       </div>
     </div>
   )

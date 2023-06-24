@@ -7,7 +7,6 @@ div.wrap-detals{
   width: 100%;
   display: flex;
   margin: 0;
-  /* justify-content: space-around; */
 }
 img.img-detals{
   max-width: 300px;
@@ -35,5 +34,4 @@ div.wrap-detals p.info{
 a{
   margin-left: 60px;
   font-size: 29px;
-
 }

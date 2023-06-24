@@ -1,8 +1,10 @@
 import React from "react";
 import { useDispatch, useSelector } from 'react-redux';
 import { filterBreedsList } from "../redux/dogSlice";
-
+import './InputListBreeds.css'
 import {OptionItem} from './OptionItem'
+import {InputFriendliness}  from'./InputFriendliness'
+
 
 
 export const InputListBreeds = () =>{
@@ -18,7 +20,6 @@ export const InputListBreeds = () =>{
 let df
   const consol = (a) =>{
     df = a.target.value
-    console.log(a.target.value)
   }
 
 
@@ -30,13 +31,24 @@ let df
       value ={elem.code}/>)
 
   return(
-    <>
-    <input type="text" onChange={ilterBreedsList} value={df}  />
-    <select size="10"  onChange={consol}>
-      {elemOptionItem}
-    </select>
-
-    </>
+    <div className="wrap-input">
+      <details>
+          <summary>Filter</summary>
+        <input className="_text" type="text" onChange={ilterBreedsList} value={df}  />
+        <select className="_sellect" size="10"  onChange={consol}>
+          {elemOptionItem}
+        </select>
+        <InputFriendliness/>
+      </details>
+      <p className="title-filter">Filter</p>
+      <div className="input-wrap">
+        <input className="_text" type="text" onChange={ilterBreedsList} value={df}  />
+        <select className="_sellect" size="10"  onChange={consol}>
+          {elemOptionItem}
+        </select>
+      <InputFriendliness/>
+      </div>
+    </div>
   )
 }
 

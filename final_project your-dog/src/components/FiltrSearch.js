@@ -9,8 +9,7 @@ import {InputFriendliness}  from'./InputFriendliness'
 export const FiltrSearch = () =>{
 return(
   <div className="form-wrapp">
-          <InputListBreeds/>
-          <InputFriendliness/>
+          <InputListBreeds />
   </div>
 )
 };

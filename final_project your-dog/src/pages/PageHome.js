@@ -7,16 +7,14 @@ import { PagesRouterSlider } from '../routes/PagesRouterSlider';
 
 
 
-import {DogSlider} from "../components/DogSlider";
 import {FiltrSearch} from '../components/FiltrSearch'
-import {SliderBtn} from '../components/SliderBtn'
 import './PageHome.css'
 
 export const PageHome = () => {
   
   let elementСount = useSelector( state => state.dog.elementСount); 
   const changelist = useSelector( state => state.dog.changelist); 
-  const dogListAll = useSelector( state => state.dog); 
+  const dogListAll = useSelector( state => state.dog.dogList); 
   let notActiveBack, notActive = " "
 
   
@@ -25,7 +23,7 @@ export const PageHome = () => {
     elementСountBack = 0;
     notActiveBack = "not-active"
   } 
-  if (changelist >= dogListAll.dogList.length - elementСount ) {
+  if (changelist >= dogListAll.length - elementСount ) {
     elementСount = 0;
     notActive = "not-active"
   }  
@@ -35,12 +33,13 @@ export const PageHome = () => {
           <h1>Your Dog</h1>
           <p className='desc-titile'>Сhoose the breed of dog that suits you</p>
         </div>
+        <PagesLinks2/>
+
         <div className="wrap-search">
           <FiltrSearch/>
-          <div className="dog-list">
-            <PagesLinks2/>
-            <PagesRouterSlider/>
-          </div>
+        <div className="dog-list">
+          <PagesRouterSlider />
+        </div>
         </div>
       </div>
     );
